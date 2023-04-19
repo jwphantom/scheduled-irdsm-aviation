@@ -28,7 +28,7 @@ const admissionFunctions = require("./function/splitAdmission");
 //initialisation du port
 const port = process.env.PORT || 3001;
 
-//module de cron job qui va executer la tache chaque 2 jours à minuit
+//script cron job qui va s'executer chaque Lundi, Mercredi et Vendredi à 01H GMT+00
 cron.schedule("0 1 * * 1,3,5", function () {
     console.log("---------------------");
     console.log(`running a task at ${new Date()}`);
