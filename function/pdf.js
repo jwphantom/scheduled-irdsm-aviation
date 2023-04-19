@@ -7,7 +7,7 @@ const mailFunctions = require("../function/mail");
 
 /* fonction qui génère un un tableau de liste d'admission dans 
 un fichier PDF */
-exports.generatePDF = (sub, minMax, current_date) => {
+exports.generatePDF = (sub, minMax) => {
     const doc = new jsPDF();
 
     var pageWidth =
@@ -90,7 +90,7 @@ exports.generatePDF = (sub, minMax, current_date) => {
     mailFunctions.sendSubmissionByMail(
         pdfBase64,
         filename,
-        "campus@irdsm-aviation.com",
+        ["campus@irdsm-aviation.com", "jawill.olongo@gmail.com"],
         minMax
     );
 };

@@ -18,7 +18,7 @@ exports.findLastCompetition = async () => {
             stringOfDateExtractOfLastCompetition
         );
 
-        return timestampOfThisString < Date.now() + 1 * 60 * 60 * 1000
+        return timestampOfThisString > Date.now() + 1 * 60 * 60 * 1000
             ? competition[competition.length - 1]
             : 0;
     } catch (error) {

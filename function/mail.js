@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
     port: 587,
     auth: {
         user: "campus@irdsm-aviation.com",
-        pass: "irdsmaviation20$"
+        pass: process.env.mail_password
     }
 });
 
@@ -54,16 +54,17 @@ exports.sendSubmissionByMail = (pdfFile, filename, expediteur, minMax) => {
         ]
     };
 
+    SplitAdmissionFunction.updateNewSplit(minMax);
+    countSubscription = minMax[1] - minMax[0] + 1;
+    const dateFormatee = dateFunctions.convertDate(new Date());
+    message = `Liste de souscriptions (${countSubscription}) envoye le ${dateFormatee}`;
+    smsFunctions.sendSMSNotification(message, "690072102");
+
     transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
             console.log(err);
         } else {
             console.log("E-mail envoyé : " + info.response);
-            SplitAdmissionFunction.updateNewSplit(minMax);
-            const dateFormatee = dateFunctions.convertDate(new Date());
-            countSubscription = 120;
-            message = `Liste de souscriptions (${countSubscription}) envoye le ${dateFormatee}`;
-            smsFunctions.sendSMSNotification(message, "690072102");
         }
     });
 };

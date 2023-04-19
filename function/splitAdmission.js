@@ -25,7 +25,6 @@ exports.splitAdmission = async () => {
         const minMax = await competitionFunctions.newSplitCompetition();
         const competition = await competitionFunctions.findLastCompetition();
         if (competition != 0) {
-            console.log(competition);
             const admission = await Admission.find({
                 concours: competition.name
             });
