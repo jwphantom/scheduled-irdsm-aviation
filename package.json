@@ -1,0 +1,44 @@
+{
+  "name": "sheduled-irdsm-aviation",
+  "version": "1.0.0",
+  "description": "Ensembles de scripts qui s'éxecute de manière périodique pour faciliter la tache de les gestion admistrative du site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jawill2/scheduled-irdsm-aviation.git "
+  },
+  "author": "James Olongo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jawill2/scheduled-irdsm-aviation/issues"
+  },
+  "homepage": "https://github.com/jawill2/scheduled-irdsm-aviation",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "date-fns": "^2.29.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "hbs": "^4.2.0",
+    "http": "^0.0.1-security",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.28",
+    "mongoose": "^7.0.3",
+    "mongoose-unique-validator": "^3.1.0",
+    "morgan": "^1.10.0",
+    "node-bulk-sms": "^1.0.7",
+    "node-cron": "^3.0.2",
+    "node-mailer": "^0.1.1",
+    "nodemailer": "^6.9.1",
+    "nodemailer-express-handlebars": "^6.1.0",
+    "twilio": "^4.10.0",
+    "utf8": "^3.0.0",
+    "pm2" : "^5.3.0"
+  }
+}
